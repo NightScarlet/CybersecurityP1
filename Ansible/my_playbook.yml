@@ -1,0 +1,78 @@
+---
+  - name: Config Webserver with Docker
+    hosts: webservers
+    become: true
+    tasks:
+    
+    - name: Install docker.io 
+      apt:      
+        name: docker.io  
+        state: present
+
+    - name: Install pip3
+      apt:
+       force_apt_get: yes
+       name: python3-pip
+       state: present
+
+    - name: Install docker python module
+      pip:
+        name: docker
+        state: present
+
+    - name: Download and launch DWVA container
+      docker_container:
+        name: dvwa
+        image: cyberxsecurity/dvwa 
+        restart_policy: always
+        published_ports: 80:80
+
+    - name: Enable my docker servers
+      systemd:
+        name: docker
+        enabled: yes
+      
+  - name: Config Elk with Docker
+    hosts: elk
+    become: true
+    tasks:
+    
+    - name: Install docker.io 
+      apt:   
+        update_cache: yes   
+        name: docker.io  
+        state: present
+
+    - name: Install pip3
+      apt:
+       force_apt_get: yes
+       name: python3-pip
+       state: present
+
+    - name: Install docker python module
+      pip:
+        name: docker
+        state: present
+
+    - name: Use more memory
+      sysctl:
+        name: vm.max_map_count
+        value: 262144
+        state: present
+        reload: yes
+
+    - name: Download and launch Elk container
+      docker_container:
+        name: elk
+        image: sebp/elk:761 
+        restart_policy: always
+        published_ports: 
+          - 5601:5601 
+          - 9200:9200
+          - 5044:5044
+
+    - name: Enable my docker servers
+      systemd:
+        name: docker
+        enabled: yes
+       
