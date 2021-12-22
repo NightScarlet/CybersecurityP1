@@ -91,8 +91,10 @@ SSH into the control node and follow the steps below:
  to check that the installation worked as expected.
 
 
- The Playbook is the three .yaml files located in the Ansible folder. One of them will download docker and elk on your machines, while the other two will download Metricbeats and Filebeats. Copy it by either copy pasting it into your own yaml file. (Care for your spacing)
--Be sure to update your hosts file in /etc/ansible/hosts. Make sure you specifiy that your webservers machines are categorized under [Webservers] and your elk server is categorized under a new host which you will call [host]
+-The Playbook is the three .yaml files located in the Ansible folder. One of them will download docker and elk on your machines, while the other two will download Metricbeats and Filebeats. Copy it by either copy pasting it into your own yaml file. (Care for your spacing)
+ 
+Be sur-e to update your hosts file in /etc/ansible/hosts. Make sure you specifiy that your webservers machines are categorized under [Webservers] and your elk server is categorized under a new host which you will call [host]
+
 -Check your Elk server is running at http://[your_elk_server_ip]:5601/app/kibana
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
