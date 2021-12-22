@@ -68,7 +68,7 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![Elk ps output](/Images/elk.png)
+![Elk ps output](/Images/Elk.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -97,11 +97,19 @@ SSH into the control node and follow the steps below:
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
 1.On the Jump box in your container run the following command to get the playbook: curl https://github.com/NightScarlet/Roberts-Repo/blob/main/Ansible/dvwa_playbook.yml > /etc/ansible/
+
 2.Edit the hosts file in /etc/ansible
+
 3.Run the Playbook: ansible-playbook /etc/ansible/dvwa_playbook.yml
+
 4.Check your installation is working by visiting in a browser: http://[your_elk_server_ip]:5601/app/kibana
+
 5.Install Filebeats by downloading my filebeat yaml with curl https://github.com/NightScarlet/Roberts-Repo/blob/main/Ansible/filebeat-playbook.yml > /etc/ansible/
+
 6. Run the Filebeats Playbook ansible-playbook /etc/ansible/filebeat-playbook.yaml
+
 7. Install Metricbeats with curl https://github.com/NightScarlet/Roberts-Repo/blob/main/Ansible/metricbeat-playbook.yml > /etc/ansible/
+
 8. 6. Run the Metricbeats Playbook ansible-playbook /etc/ansible/metricbeat-playbook.yaml
+
 9. 4.Check your installation is working by visiting in a browser: http://[your_elk_server_ip]:5601/app/kibana
