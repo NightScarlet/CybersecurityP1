@@ -12,7 +12,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
 ![File Beat](/Ansible/filebeat_playbook.yml)
 
 This document contains the following details:
-- Description of the Topologu
+- Description of the Topology
 - Access Policies
 - ELK Configuration
   - Beats in Use
@@ -45,7 +45,7 @@ The machines on the internal network are not exposed to the public Internet.
 
 Only the Jump Box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses: 
 104.63.249.117
-
+(Your Personal IP Address)
 
 Machines within the network can only be accessed by Jump Box.
 10.0.0.5
@@ -93,11 +93,11 @@ SSH into the control node and follow the steps below:
 
 -The Playbook is the three .yaml files located in the Ansible folder. One of them will download docker and elk on your machines, while the other two will download Metricbeats and Filebeats. Copy it by either copy pasting it into your own yaml file. (Care for your spacing)
  
-Be sur-e to update your hosts file in /etc/ansible/hosts. Make sure you specifiy that your webservers machines are categorized under [Webservers] and your elk server is categorized under a new host which you will call [host]
+Be sure to update your hosts file in /etc/ansible/hosts. Make sure you specifiy that your webservers machines are categorized under [Webservers] and your elk server is categorized under a new host which you will call [host]
 
 -Check your Elk server is running at http://[your_elk_server_ip]:5601/app/kibana
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+_Here are the commands you would need to use the setup the environment_
 1.On the Jump box in your container run the following command to get the playbook: curl https://github.com/NightScarlet/Roberts-Repo/blob/main/Ansible/dvwa_playbook.yml > /etc/ansible/
 
 2.Edit the hosts file in /etc/ansible
