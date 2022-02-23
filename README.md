@@ -98,6 +98,7 @@ Be sure to update your hosts file in /etc/ansible/hosts. Make sure you specifiy 
 -Check your Elk server is running at http://[your_elk_server_ip]:5601/app/kibana
 
 _Here are the commands you would need to use the setup the environment_
+
 1.On the Jump box in your container run the following command to get the playbook: curl https://github.com/NightScarlet/Roberts-Repo/blob/main/Ansible/dvwa_playbook.yml > /etc/ansible/
 
 2.Edit the hosts file in /etc/ansible
