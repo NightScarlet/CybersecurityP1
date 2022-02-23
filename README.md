@@ -112,6 +112,6 @@ _As a **Bonus**, provide the specific commands the user will need to run to down
 
 7. Install Metricbeats with curl https://github.com/NightScarlet/Roberts-Repo/blob/main/Ansible/metricbeat-playbook.yml > /etc/ansible/
 
-8. 6. Run the Metricbeats Playbook ansible-playbook /etc/ansible/metricbeat-playbook.yaml
+8.Run the Metricbeats Playbook ansible-playbook /etc/ansible/metricbeat-playbook.yaml
 
-9. 4.Check your installation is working by visiting in a browser: http://[your_elk_server_ip]:5601/app/kibana
+9.Check your installation is working by visiting in a browser: http://[your_elk_server_ip]:5601/app/kibana
